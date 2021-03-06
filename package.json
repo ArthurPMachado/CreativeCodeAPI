@@ -1,0 +1,8 @@
+{
+  "name": "creativecode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ArthurPMachado/CreativeCodeAPI.git",
+  "author": "Arthur Pereira Machado <machadoparthur1@gmail.com>",
+  "license": "MIT"
+}
