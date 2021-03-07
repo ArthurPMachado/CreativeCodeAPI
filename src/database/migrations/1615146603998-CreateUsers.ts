@@ -33,7 +33,7 @@ export class CreateUsers1615146603998 implements MigrationInterface {
             type: 'decimal',
           },
           {
-            name: 'peso',
+            name: 'etnia',
             type: 'varchar',
             enum: ['BRANCO', 'NEGRO', 'PARDO', 'INDIGENA', 'ASIATICO'],
           },
