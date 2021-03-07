@@ -9,6 +9,7 @@ const userController = new UserController();
 const addressController = new AddressController();
 
 router.post('/users', userController.create);
+
 router.post('/address', addressController.create);
 /**
  router.get('/users', userController.create);
