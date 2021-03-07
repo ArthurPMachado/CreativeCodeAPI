@@ -3,7 +3,7 @@
   "host": "localhost",
   "port": 4040,
   "database": "creativecodetest",
-  "username": "test",
+  "username": "postgres",
   "password": "test",
   "synchronize": true,
   "logging": true,
