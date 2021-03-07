@@ -6,10 +6,10 @@ const router = Router();
 
 const userController = new UserController();
 
-router.get('/users', userController.create);
+router.post('/users', userController.create);
 /**
+ router.get('/users', userController.create);
  router.get('/users');
- router.post('/users');
  router.put('/users');
  router.delete('/users');
 

@@ -5,7 +5,6 @@
   "database": "creativecodetest",
   "username": "postgres",
   "password": "test",
-  "synchronize": true,
   "logging": true,
   "entities": ["./src/models/**.ts"],
   "migrations": ["./src/database/migrations/**.ts"],
