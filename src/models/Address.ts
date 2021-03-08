@@ -26,7 +26,7 @@ class Address {
   complemento: string;
 
   @Column()
-  cep: number;
+  cep: string;
 
   @Column()
   cidade: string;

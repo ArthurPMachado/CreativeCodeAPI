@@ -29,7 +29,7 @@ export class CreateAddress1615147542761 implements MigrationInterface {
           },
           {
             name: 'cep',
-            type: 'integer',
+            type: 'varchar',
           },
           {
             name: 'cidade',
