@@ -3,6 +3,8 @@ import {
 } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
+import { UserEthnicity } from './enum/UserEthnicity';
+
 @Entity('users')
 class User {
   @PrimaryColumn()
@@ -23,8 +25,11 @@ class User {
   @Column()
   peso: number;
 
-  @Column()
-  etnia: string;
+  @Column({
+    type: 'enum',
+    enum: UserEthnicity,
+  })
+  etnia: UserEthnicity;
 
   constructor() {
     if (!this.id) {

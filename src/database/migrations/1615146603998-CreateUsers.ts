@@ -34,7 +34,7 @@ export class CreateUsers1615146603998 implements MigrationInterface {
           },
           {
             name: 'etnia',
-            type: 'varchar',
+            type: 'enum',
             enum: ['BRANCO', 'NEGRO', 'PARDO', 'INDIGENA', 'ASIATICO'],
           },
         ],
