@@ -19,6 +19,24 @@ class UserController {
 
     return response.status(201).json(user);
   }
+
+  async listAll(request: Request, response: Response) {
+    const userRepository = getCustomRepository(UserRepository);
+
+    const listUsers = await userRepository.find();
+
+    return response.json(listUsers);
+  }
+
+  async listOne(request: Request, response: Response) {
+    const { id } = request.params;
+
+    const userRepository = getCustomRepository(UserRepository);
+
+    const listUser = await userRepository.find({ id });
+
+    return response.json(listUser);
+  }
 }
 
 export default UserController;

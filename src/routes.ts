@@ -8,12 +8,12 @@ const router = Router();
 const userController = new UserController();
 const addressController = new AddressController();
 
+router.get('/users', userController.listAll);
+router.get('/users/:id', userController.listOne);
 router.post('/users', userController.create);
 
 router.post('/address', addressController.create);
 /**
- router.get('/users', userController.create);
- router.get('/users');
  router.put('/users');
  router.delete('/users');
 
