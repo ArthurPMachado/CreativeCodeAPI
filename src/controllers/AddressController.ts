@@ -46,6 +46,32 @@ class AddressController {
 
     return response.json(listAddress);
   }
+
+  async update(request: Request, response: Response) {
+    const { id } = request.params;
+    const {
+      nome_endereco, numero, complemento, cep, cidade, estado,
+    } = request.body;
+
+    const addressRepository = getCustomRepository(AddressRepository);
+
+    const addressExists = await addressRepository.findOne({ id });
+
+    if (!addressExists) {
+      return response.status(404).json({ message: 'Address does not exist' });
+    }
+
+    addressExists.nome_endereco = nome_endereco;
+    addressExists.numero = numero;
+    addressExists.complemento = complemento;
+    addressExists.cep = cep;
+    addressExists.cidade = cidade;
+    addressExists.estado = estado;
+
+    await addressRepository.save(addressExists);
+
+    return response.status(200).json(addressExists);
+  }
 }
 
 export default AddressController;
