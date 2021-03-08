@@ -72,6 +72,16 @@ class AddressController {
 
     return response.status(200).json(addressExists);
   }
+
+  async delete(request: Request, response: Response) {
+    const { id } = request.params;
+
+    const addressRepository = getCustomRepository(AddressRepository);
+
+    await addressRepository.delete(id);
+
+    return response.status(204).json();
+  }
 }
 
 export default AddressController;

@@ -18,10 +18,6 @@ router.get('/address', addressController.listAll);
 router.get('/address/:id', addressController.listOne);
 router.post('/users/:email/address', addressController.create);
 router.put('/address/:id', addressController.update);
-/**
-
- router.delete('/address');
-
-*/
+router.delete('/address/:id', addressController.delete);
 
 export default router;
