@@ -11,10 +11,10 @@ const addressController = new AddressController();
 router.get('/users', userController.listAll);
 router.get('/users/:id', userController.listOne);
 router.post('/users', userController.create);
+router.put('/users/:id', userController.update);
 
 router.post('/address', addressController.create);
 /**
- router.put('/users');
  router.delete('/users');
 
  router.get('/address');

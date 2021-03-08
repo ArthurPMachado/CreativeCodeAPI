@@ -37,6 +37,32 @@ class UserController {
 
     return response.json(listUser);
   }
+
+  async update(request: Request, response: Response) {
+    const { id } = request.params;
+    const {
+      nome, telefone, email, idade, peso, etnia,
+    } = request.body;
+
+    const userRepository = getCustomRepository(UserRepository);
+
+    const userExists = await userRepository.findOne({ id });
+
+    if (!userExists) {
+      return response.status(404).json({ message: 'User does not exist' });
+    }
+
+    userExists.nome = nome;
+    userExists.telefone = telefone;
+    userExists.email = email;
+    userExists.idade = idade;
+    userExists.peso = peso;
+    userExists.etnia = etnia;
+
+    await userRepository.save(userExists);
+
+    return response.status(200).json(userExists);
+  }
 }
 
 export default UserController;
