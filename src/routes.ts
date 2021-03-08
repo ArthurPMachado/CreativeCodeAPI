@@ -14,7 +14,7 @@ router.post('/users', userController.create);
 router.put('/users/:id', userController.update);
 router.delete('/users/:id', userController.delete);
 
-router.post('/address', addressController.create);
+router.post('/users/:email/address', addressController.create);
 /**
 
  router.get('/address');
