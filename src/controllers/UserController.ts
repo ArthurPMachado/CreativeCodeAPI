@@ -63,6 +63,16 @@ class UserController {
 
     return response.status(200).json(userExists);
   }
+
+  async delete(request: Request, response: Response) {
+    const { id } = request.params;
+
+    const userRepository = getCustomRepository(UserRepository);
+
+    await userRepository.delete(id);
+
+    return response.status(204).json();
+  }
 }
 
 export default UserController;

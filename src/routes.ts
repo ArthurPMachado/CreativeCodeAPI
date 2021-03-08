@@ -12,10 +12,10 @@ router.get('/users', userController.listAll);
 router.get('/users/:id', userController.listOne);
 router.post('/users', userController.create);
 router.put('/users/:id', userController.update);
+router.delete('/users/:id', userController.delete);
 
 router.post('/address', addressController.create);
 /**
- router.delete('/users');
 
  router.get('/address');
  router.get('/address');
