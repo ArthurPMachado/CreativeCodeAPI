@@ -1,9 +1,9 @@
 const auth = require('../services/auth');
 
 const authenticate = async (ctx) => {
-  const { email, password } = ctx.request.body;
+  const { email } = ctx.request.body;
   ctx.body = {
-    token: await auth.authenticate({ email, password }),
+    token: await auth.authenticate({ email }),
   };
 };
 

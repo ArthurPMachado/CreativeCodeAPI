@@ -3,6 +3,9 @@ import AddressController from './controllers/AddressController';
 
 import UserController from './controllers/UserController';
 
+const authenticated = require('./middlewares/auth');
+const auth = require('./handlers/auth');
+
 const router = Router();
 
 const userController = new UserController();
@@ -19,5 +22,7 @@ router.get('/address/:id', addressController.listOne);
 router.post('/users/:email/address', addressController.create);
 router.put('/address/:id', addressController.update);
 router.delete('/address/:id', addressController.delete);
+
+router.post('/auth', auth.authenticate);
 
 export default router;
