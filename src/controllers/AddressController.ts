@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
-import Address from '../models/Address';
+import { getCustomRepository } from 'typeorm';
+import AddressRepository from '../repositories/AddressRepository';
 
 class AddressController {
   async create(request: Request, response: Response) {
@@ -8,7 +8,7 @@ class AddressController {
       nome_endereco, numero, complemento, cep, cidade, estado,
     } = request.body;
 
-    const addressRepository = getRepository(Address);
+    const addressRepository = getCustomRepository(AddressRepository);
 
     const address = addressRepository.create({
       nome_endereco, numero, complemento, cep, cidade, estado,
