@@ -28,6 +28,24 @@ class AddressController {
 
     return response.json(address);
   }
+
+  async listAll(request: Request, response: Response) {
+    const addressRepository = getCustomRepository(AddressRepository);
+
+    const listAddresses = await addressRepository.find();
+
+    return response.json(listAddresses);
+  }
+
+  async listOne(request: Request, response: Response) {
+    const { id } = request.params;
+
+    const addressRepository = getCustomRepository(AddressRepository);
+
+    const listAddress = await addressRepository.find({ id });
+
+    return response.json(listAddress);
+  }
 }
 
 export default AddressController;
